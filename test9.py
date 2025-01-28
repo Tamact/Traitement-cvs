@@ -227,7 +227,7 @@ def process_cv_file(cv_file_path):
         final_json.update(analysis)
         return final_json
     else:
-        # Si pas de JSON valide, on peut renvoyer None
+        
         return None
 
 
