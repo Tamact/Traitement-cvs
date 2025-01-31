@@ -103,7 +103,7 @@ def insert_cv_analysis(cursor, id_candidat, cv_info, cv_vector):
         # OU si c'est un text[], alors education directement
     ))
 
-with open("cv.json", "r", encoding="utf-8") as f:
+with open("cvs.json", "r", encoding="utf-8") as f:
     cvs_data = json.load(f)
 
 for cv_item in cvs_data:

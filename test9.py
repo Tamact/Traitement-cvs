@@ -282,5 +282,5 @@ def process_all_cvs(cv_folder, output_file):
 # Point d'entrée
 if __name__ == "__main__":
     cv_folder = 'CVs_telecharges'
-    output_file = 'cv1.json'
+    output_file = 'cv2.json'
     process_all_cvs(cv_folder, output_file)
