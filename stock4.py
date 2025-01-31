@@ -5,12 +5,13 @@ import psycopg2.extras
 import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+import os
 
 conn = psycopg2.connect(
-    host="localhost",
-    database="ujuzai_db",
-    user="postgres",
-    password="azerty12"
+    host=os.getenv("HOST"),
+    database=os.getenv("DATABASE"),
+    user=os.getenv("USER"),
+    password=os.getenv("PASSWORD")
 )
 cursor = conn.cursor()
 

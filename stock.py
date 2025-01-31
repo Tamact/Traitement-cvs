@@ -3,13 +3,17 @@ import psycopg2
 import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Connexion à la base de données PostgreSQL
 conn = psycopg2.connect(
-    host="localhost",
-    database="rhh",
-    user="postgres",
-    password="azerty12"
+    host=os.getenv("HOST"),
+    database=os.getenv("DATABASE"),
+    user=os.getenv("USER"),
+    password=os.getenv("PASSWORD")
 )
 cursor = conn.cursor()
 

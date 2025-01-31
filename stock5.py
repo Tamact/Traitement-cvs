@@ -5,15 +5,17 @@ import psycopg2.extras
 import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from dotenv import load_dotenv
+import os
 
-# === 1) Connexion à la base Supabase
+
 conn = psycopg2.connect(
-    host="db.zbpiflnlvdwyvcwzfzug.supabase.co",   
-    database="database",                  
-    user="postgres",                     
-    password="Azerty12.",       
-    port="5432",                          
-    sslmode="require"                     
+    host=os.environ.get("DB_HOST"),
+    database=os.environ.get("DB_NAME"),
+    user=os.environ.get("DB_USER"),
+    password=os.environ.get("DB_PASSWORD"),
+    port=os.environ.get("DB_PORT"),
+    sslmode=os.environ.get("DB_SSLMODE")
 )
 
 cursor = conn.cursor()

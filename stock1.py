@@ -1,12 +1,15 @@
 import json
 import psycopg2
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Connexion à la base de données PostgreSQL
 conn = psycopg2.connect(
-    host="localhost",
-    database="ujuzai_db",
-    user="postgres",
-    password="azerty12"
+    host=os.getenv("HOST"),
+    database=os.getenv("NAME"),
+    user=os.getenv("USER"),
+    password=os.getenv("PASSWORD")
 )
 cursor = conn.cursor()
 

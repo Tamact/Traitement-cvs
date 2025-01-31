@@ -2,3 +2,4 @@ CVs_telecharges/
 Jsons/
 cv/
 .env
+.gitignore

@@ -1,17 +1,15 @@
 import json
 import uuid
 import string
-
-# Installez la lib : pip install supabase
 from supabase import create_client, Client
-
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from dotenv import load_dotenv
+import os
 
-
-SUPABASE_URL = "https://zbpiflnlvdwyvcwzfzug.supabase.co"  
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpicGlmbG5sdmR3eXZjd3pmenVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgxODA5NDYsImV4cCI6MjA1Mzc1Njk0Nn0.UXEUqtBQNVVf7ByvYqz-2sP4BuI-Wj07NaYAa9Dw5pk"             # ex: "eyJhbGciOiJIUzI1..."
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 

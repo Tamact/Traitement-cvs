@@ -4,12 +4,11 @@ import google.generativeai as genai
 import json
 from dotenv import load_dotenv
 
-# Charger la clé API depuis le fichier .env
-#load_dotenv()
-#API_KEY = os.getenv("GEMINI_API_KEY")
+load_dotenv()
 
-# Configurez l'API avec votre clé API
-genai.configure(api_key="AIzaSyCyqbK54J21c1bZk0e6CUnv2P2SXUhg-IE")
+API_KEY = os.getenv("GEMINI_API_KEY")
+
+
 
 def load_json_file(path):
   """Loads a JSON file from the given path."""
